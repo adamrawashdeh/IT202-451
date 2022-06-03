@@ -8,7 +8,9 @@ function bePositive($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     echo "<br>Positive output:<br>";
     //TODO use echo to output all of the values as positive (even if they were originally positive)
-
+    for($i=0; $i < sizeof($arr); $i+=1)
+    echo abs($arr[$i]);
+    
 }
 echo "Problem 3: Be Positive<br>";
 ?>
@@ -17,7 +19,7 @@ echo "Problem 3: Be Positive<br>";
         <th>A1</th>
         <th>A2</th>
         <th>A3</th>
-        <th>A4</th>
+        <th>A4</th> 
     </thread>
     <tbody>
         <tr>

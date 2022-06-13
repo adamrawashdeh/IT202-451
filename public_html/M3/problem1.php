@@ -20,43 +20,40 @@
         }
     </script>
     <style>
-        /* TODO: make edits here */
+            /* TODO: make edits here */
     </style>
     <!-- make the necessary edits above this line -->
-     ul li {
+      ul li {
+          <!-- horizontal navigation --> 
+          display: inline;
 
-        <!-- horizontal navigation -->
-        display: inline;
-
-        <!-- style choice -->
-        font-size: 10;
+          <!-- style choice -->
+          font-size: 10;
      }
+      ul {
+          <!-- removing navigation list item markers -->
+          list-style: none;
 
-     ul {
-        
-        <!-- removing navigation list item markers -->
-        list-style: none;
-
-        <!-- navigation background -->
-        background-color: pink;
+          <!-- navigation background -->
+          background-color: pink;
      }
         <!-- hover color -->
-    p:hover, h1:hover, a:hover {
-         color: orange;
+      p:hover, h1:hover, a:hover {
+          color: orange;
      }
 
      <!-- changing from bulletin points to checkmarks -->
-     ul li::before {
-         content: '✓';
+      ul li::before {
+          content: '✓';
      }
 
-     ul li a {
-         display: inline-block;
+      ul li a {
+          display: inline-block;
      }
 
      <!-- first-letter uppercase in both tags -->
-     p::first-letter, h1::first-letter, a::first-letter {
-         text-transform: uppercase;
+      p::first-letter, h1::first-letter, a::first-letter {
+          text-transform: uppercase;
      }
 
     <!-- Do not edit anything below this line, doing so will lose points-->

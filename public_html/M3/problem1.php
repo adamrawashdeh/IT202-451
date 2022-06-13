@@ -14,7 +14,7 @@
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
                 var current_Link = url.innertext;
-                updateCurrentPage(current_Link);
+                updateCurrentPage(current_Link); 
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
@@ -42,7 +42,7 @@
      }
         <!-- hover color -->
     p:hover, h1:hover, a:hover {
-         color: yellow;
+         color: orange;
      }
 
      <!-- changing from bulletin points to checkmarks -->
@@ -50,7 +50,9 @@
          content: '✓';
      }
 
-
+     ul li a {
+         display: inline-block;
+     }
 
      <!-- first-letter uppercase in both tags -->
      p::first-letter, h1::first-letter, a::first-letter {

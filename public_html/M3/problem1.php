@@ -13,8 +13,8 @@
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                var current_Link = url.innertext
-                updateCurrentPage(current_Link)
+                var current_Link = url.innertext;
+                updateCurrentPage(current_Link);
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }

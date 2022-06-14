@@ -35,6 +35,8 @@
           background-color: lightseagreen;
 
           word-spacing: 20px;
+
+          text-align: center;
       }
       ul a:hover {
           color: red;

@@ -9,18 +9,18 @@
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
         });
-        function getCurrentSelection(url) {
+        function getCurrentSelection(link) {
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                var current_Link = url.innertext;
+                var current_Link = link.innertext;
                 updateCurrentPage(current_Link); 
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
     </script>
     <style>
-            /* TODO: make edits here */
+    /* TODO: make edits here */
     </style>
     <!-- make the necessary edits above this line -->
       ul li {

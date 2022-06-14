@@ -32,6 +32,10 @@
 
           background-color: lightseagreen;
       }
+
+      nav {
+          background-color: firebrick;
+      }
       ul a:hover {
           color: red;
       }

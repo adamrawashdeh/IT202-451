@@ -21,15 +21,16 @@
     </script>
     <style>
     /* TODO: make edits here */
-    </style>
-    <!-- make the necessary edits above this line -->
-      nav > ul li {
-          <!-- horizontal navigation --> 
+    nav > ul li {
+         
           display: inline;
 
-          <!-- style choice -->
+        
           font-size: 12px;
       }
+    </style>
+    <!-- make the necessary edits above this line -->
+      
       h2 > p {
           <!-- removing navigation list item markers -->
           list-style: none;

@@ -41,7 +41,7 @@
       ul a:hover {
           color: red;
       }
-      a:before {
+      ul li li:before {
           content: '✓';
       }
       h1::first-letter, a::first-letter {

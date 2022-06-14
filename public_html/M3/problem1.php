@@ -27,7 +27,7 @@
 
           font-size: 16px;
       }
-      body {
+      ul, body {
           list-style: none;
 
           background-color: lightseagreen;

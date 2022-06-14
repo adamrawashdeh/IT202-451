@@ -33,6 +33,8 @@
 
       nav {
           background-color: lightseagreen;
+
+          word-spacing: 20px;
       }
       ul a:hover {
           color: red;

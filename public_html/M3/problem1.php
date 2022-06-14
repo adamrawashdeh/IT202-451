@@ -21,7 +21,7 @@
     </script>
     <style>
     /* TODO: make edits here */
-      ul li {
+      nav li {
          
           display: inline;
 

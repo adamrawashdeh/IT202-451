@@ -25,34 +25,25 @@
          
           display: inline;
 
-        
           font-size: 12px;
       }
-    </style>
-    <!-- make the necessary edits above this line -->
-      
       h2 > p {
-          <!-- removing navigation list item markers -->
           list-style: none;
 
-          <!-- navigation background -->
           background-color: blue;
       }
-        <!-- hover color -->
       h3 > a:hover {
           color: red;
       }
-
-     <!-- changing from bulletin points to checkmarks -->
       h4 > p::before {
           content: '✓';
       }
-
-     <!-- first-letter uppercase in both tags -->
       h5 > a::first-letter {
           text-transform: uppercase;
       }
-
+    </style>
+    <!-- make the necessary edits above this line -->
+     
     <!-- Do not edit anything below this line, doing so will lose points-->
     <script src="https://it202-spring-22.herokuapp.com/M3/problem1.js">
             //Don't edit anything in this tag and do not delete it

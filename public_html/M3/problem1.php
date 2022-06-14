@@ -29,12 +29,10 @@
       }
       ul, body {
           list-style: none;
-
-          background-color: lightseagreen;
       }
 
       nav {
-          background-color: firebrick;
+          background-color: lightseagreen;
       }
       ul a:hover {
           color: red;

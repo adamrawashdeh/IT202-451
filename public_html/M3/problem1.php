@@ -25,7 +25,7 @@
          
           display: inline;
 
-          font-size: 12px;
+          font-size: 24px;
       }
       ul {
           list-style: none;
@@ -37,6 +37,10 @@
       }
       ul li::before {
           content: '✓';
+      }
+
+      ul li a {
+          display: inline-block;
       }
       a::first-letter {
           text-transform: uppercase;

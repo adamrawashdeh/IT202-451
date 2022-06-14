@@ -21,21 +21,21 @@
     </script>
     <style>
     /* TODO: make edits here */
-      ul li {
+      h1 {
          
           display: inline;
 
-          font-size: 18px;
+          font-size: 16px;
       }
-      ul {
+      h2 {
           list-style: none;
 
           background-color: lightseagreen;
       }
-      ul a:hover {
+      h3 a:hover {
           color: red;
       }
-      ul li::before {
+      h4::before {
           content: '✓';
       }
       a::first-letter {

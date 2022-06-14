@@ -25,22 +25,18 @@
          
           display: inline;
 
-          font-size: 24px;
+          font-size: 18px;
       }
       ul {
           list-style: none;
 
-          background-color: blue;
+          background-color: lightseagreen;
       }
       ul a:hover {
           color: red;
       }
       ul li::before {
           content: '✓';
-      }
-
-      ul li a {
-          display: inline-block;
       }
       a::first-letter {
           text-transform: uppercase;

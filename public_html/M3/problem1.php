@@ -23,7 +23,7 @@
     /* TODO: make edits here */
     </style>
     <!-- make the necessary edits above this line -->
-    h1 > p {
+      nav > ul li {
           <!-- horizontal navigation --> 
           display: inline;
 
@@ -43,16 +43,12 @@
       }
 
      <!-- changing from bulletin points to checkmarks -->
-      h4 > ul li:before {
+      h4 > p::before {
           content: '✓';
       }
 
-      h5 > ul li a {
-          display: inline-block;
-      }
-
      <!-- first-letter uppercase in both tags -->
-      h6 > a::first-letter {
+      h5 > a::first-letter {
           text-transform: uppercase;
       }
 

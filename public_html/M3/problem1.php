@@ -25,7 +25,7 @@
          
           display: inline;
 
-          font-size: 16px;
+          font-size: 24px;
       }
       ul, body {
           list-style: none;

@@ -21,24 +21,24 @@
     </script>
     <style>
     /* TODO: make edits here */
-    nav > ul li {
+      ul li {
          
           display: inline;
 
           font-size: 12px;
       }
-      h2 > p {
+      ul {
           list-style: none;
 
           background-color: blue;
       }
-      h3 > a:hover {
+      ul a:hover {
           color: red;
       }
-      h4 > p::before {
+      ul li::before {
           content: '✓';
       }
-      h5 > a::first-letter {
+      a::first-letter {
           text-transform: uppercase;
       }
     </style>

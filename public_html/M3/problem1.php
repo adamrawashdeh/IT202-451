@@ -23,7 +23,7 @@
     /* TODO: make edits here */
     </style>
     <!-- make the necessary edits above this line -->
-      h1 > p {
+    h1 > p {
           <!-- horizontal navigation --> 
           display: inline;
 

@@ -34,14 +34,14 @@
       nav {
           background-color: lightseagreen;
 
-          word-spacing: 20px;
+          word-spacing: 30px;
 
           text-align: center;
       }
       ul a:hover {
           color: red;
       }
-      ul li::before {
+      a:before {
           content: '✓';
       }
       h1::first-letter, a::first-letter {

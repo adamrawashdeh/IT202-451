@@ -9,19 +9,14 @@
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
         });
-        function getCurrentSelection(link) {
+        function getCurrentSelection(Selected_link) {
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                var currentClickedLinkText = link.innerText;
-                updateCurrentPage(currentClickedLinkText); 
+                document.querySelector("h1").innerText = Selected_link;
+                document.querySelector("title").innerText = Selected_link;
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
-        }
-
-        function updateCurrentPage(Selected_link) {
-            document.querySelector("h1").innerText = Selected_link;
-            document.querySelector("title").innerText = Selected_link;
         }
     </script>
     <style>

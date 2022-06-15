@@ -19,12 +19,10 @@
             }, 100);
         }
 
-        function updateCurrentPage(contentToUpdate) {
-  // Update the content of the h1 tag with the link text
-  document.querySelector("h1").innerText = contentToUpdate;
+        function updateCurrentPage(Selected_link) {
+  document.querySelector("h1").innerText = Selected_link;
 
-  // Update the content of the title tag with the link text
-  document.querySelector("title").innerText = contentToUpdate;
+  document.querySelector("title").innerText = Selected_link;
 }
     </script>
     <style>

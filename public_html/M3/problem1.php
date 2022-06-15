@@ -17,6 +17,14 @@
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
+
+        function updateCurrentPage(contentToUpdate) {
+  // Update the content of the h1 tag with the link text
+  document.querySelector("h1").innerText = contentToUpdate;
+
+  // Update the content of the title tag with the link text
+  document.querySelector("title").innerText = contentToUpdate;
+}
     </script>
     <style>
     /* TODO: make edits here */
@@ -31,6 +39,7 @@
       }
 
       nav {
+
           background-color: lightseagreen;
 
           word-spacing: 30px;
@@ -38,14 +47,18 @@
           text-align: center;
       }
       ul a:hover {
+          
           color: red;
       }
       ul li li:before {
+
           content: '✓';
       }
       h1::first-letter, a::first-letter {
+
           text-transform: uppercase;
       }
+
     </style>
     <!-- make the necessary edits above this line -->
      

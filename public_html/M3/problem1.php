@@ -20,10 +20,9 @@
         }
 
         function updateCurrentPage(Selected_link) {
-  document.querySelector("h1").innerText = Selected_link;
-
-  document.querySelector("title").innerText = Selected_link;
-}
+            document.querySelector("h1").innerText = Selected_link;
+            document.querySelector("title").innerText = Selected_link;
+        }
     </script>
     <style>
     /* TODO: make edits here */

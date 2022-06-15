@@ -49,7 +49,7 @@
           
           color: red;
       }
-      ul li li:before {
+      h3 + ul li:before {
 
           content: '✓';
       }

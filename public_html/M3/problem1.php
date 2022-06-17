@@ -14,7 +14,7 @@
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                const link = document.querySelector('a');
+                const link = document.querySelectorAll('a');
                 link[0].addEventListener('click', ()=>{updateCurrentPage('login');});
                 link[1].addEventListener('click', ()=>{updateCurrentPage('register');});
                 link[2].addEventListener('click', ()=>{updateCurrentPage('profile');});

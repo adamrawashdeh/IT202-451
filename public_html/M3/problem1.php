@@ -8,16 +8,21 @@
         window.addEventListener("load", () => {
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
+            getCurrentSelection();
         });
-        function getCurrentSelection(Selected_link) {
+        function getCurrentSelection() {
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                document.querySelector("h1").innerText = Selected_link;
-                document.querySelector("title").innerText = Selected_link;
-                //Note: likely you'll want to call updateCurrentPage towards the end
+                const link = document.querySelectorAll('a');
+                link[0].addEventListener('click', ()=>{updateCurrentPage('login');});
+                link[1].addEventListener('click', ()=>{updateCurrentPage('register');});
+                link[2].addEventListener('click', ()=>{updateCurrentPage('profile');});
+                link[3].addEventListener('click', ()=>{updateCurrentPage('logout');});
+                //Note: likely you'll want to call updateCurrentPage towards the end               
             }, 100);
         }
+       
     </script>
     <style>
     /* TODO: make edits here */

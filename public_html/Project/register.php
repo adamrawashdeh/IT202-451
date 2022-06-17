@@ -37,10 +37,16 @@ require_once(__DIR__ .  "/../../partials/nav.php");
         $hasError = true;
     }
     //sanitize
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    //$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $email = sanitize_email($email);
     //validate
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    /*if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Please eneter a valid email address <br>";
+        $hasError = true;
+    }
+    */
+    if(is_valid_email($email)) {
+        echo "password must be provided <br>";
         $hasError = true;
     }
     if (empty($password)) {

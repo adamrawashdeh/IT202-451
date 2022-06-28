@@ -41,8 +41,8 @@ require_once(__DIR__ .  "/../../partials/nav.php");
         $hasError = true;
     }
     */
-    if(is_valid_email($email)) {
-        flash("password must be provided <br>");
+    if(!is_valid_email($email)) {
+        flash("invalid email <br>");
         $hasError = true;
     }
     if (empty($password)) {
@@ -56,7 +56,7 @@ require_once(__DIR__ .  "/../../partials/nav.php");
     if (!$hasError) {
         //TODO 4
         $db = getDB();
-        $stmt = $db->prepare("SELECT email, password from Users where email = :email");
+        $stmt = $db->prepare("SELECT id, email, username, password from Users where email = :email");
         try {
             $r = $stmt->execute([":email" => $email]);
             if ($r) {

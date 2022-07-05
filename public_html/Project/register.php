@@ -45,7 +45,6 @@ reset_session();
         else {
             return true;
         }
-        return true;
     }
 
     function is_valid_email(email) {
@@ -58,7 +57,7 @@ reset_session();
             return false;
         }
     }
-    
+        
 </script>
 <?php
 //TODO 2: add PHP Code

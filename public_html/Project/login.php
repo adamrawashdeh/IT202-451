@@ -3,8 +3,8 @@ require_once(__DIR__ .  "/../../partials/nav.php");
 ?>
 <form onsubmit="return validate(this)" method="POST">
     <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" required />
+        <label for="email">Email/Username</label>
+        <input type="text" name="email" required />
     </div>
     <div>
         <label for="pw">Password</label>
@@ -16,8 +16,37 @@ require_once(__DIR__ .  "/../../partials/nav.php");
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
+        let email = form.email.value;
+        let password = form.password.value;
 
-        return true;
+        if (password === ""){
+            flash("Password cannot be empty", "warning")
+            return false;
+        }
+        
+        if (password.length <= 8){
+            flash("Password must be 8 or more character long", "warning")
+            return false;
+        }
+
+        if (!is_valid_email(email)) {
+            flash("Invalid email address", "warning");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function is_valid_email(email) {
+        let email_valid = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
+        if (email.match(email_valid)){
+            return true;
+        }
+        else {
+            flash("Invalid email address", "warning");
+            return false;
+        }
     }
 </script>
 <?php
@@ -56,7 +85,7 @@ require_once(__DIR__ .  "/../../partials/nav.php");
     if (!$hasError) {
         //TODO 4
         $db = getDB();
-        $stmt = $db->prepare("SELECT id, email, username, password from Users where email = :email");
+        $stmt = $db->prepare("SELECT id, email, username, password from Users where email = :email or username = :email");
         try {
             $r = $stmt->execute([":email" => $email]);
             if ($r) {

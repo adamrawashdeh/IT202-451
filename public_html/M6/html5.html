@@ -241,10 +241,13 @@
         }
 
         function addBall() {
-          if(leftScore || rightScore){
+          if(leftScore === 2){
             ball+=1;
           }
-        }
+          else if(rightScore === 2){
+            ball+=1;
+          }
+          }
 
     </script>
     <style>

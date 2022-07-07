@@ -241,13 +241,15 @@
         }
 
         function addBall() {
-          if(leftScore){
-            ball+=1;
-          }
-          else if(rightScore){
-            ball+=1;
-          }
-          }
+          if (ball.x < leftPaddle.x) {
+                ball++;
+                resetBall();
+            }
+            else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
+                ball++;
+                resetBall();
+            }
+        }
 
     </script>
     <style>

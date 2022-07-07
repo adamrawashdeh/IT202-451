@@ -245,11 +245,9 @@
         function addBall() {
           if (ball.x < leftPaddle.x) {
                 ball++;
-                resetBall();
             }
             else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
                 ball++;
-                resetBall();
             }
         }
 

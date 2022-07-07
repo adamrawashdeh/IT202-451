@@ -202,14 +202,12 @@
             if (ball.x < leftPaddle.x) {
                 rightScore++;
                 leftScore--;
-                ball++
                 resetBall();
             }
             //right side of ball passes right side of paddle 
             else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
                 leftScore++;
                 rightScore--;
-                ball++
                 resetBall();
             }
         }
@@ -234,6 +232,7 @@
             movePaddle();
             doAI();
             moveBall();
+            addBall();
 
             checkPaddleCollision();
             checkScore();

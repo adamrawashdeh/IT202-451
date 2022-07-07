@@ -201,16 +201,26 @@
             //left side of ball passes left side of paddle
             if (ball.x < leftPaddle.x) {
                 rightScore++;
-                leftScore--;
+                leftScore--; //aor9 7/6/2022
                 resetBall();
             }
             //right side of ball passes right side of paddle 
             else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
                 leftScore++;
-                rightScore--;
+                rightScore--; //aor9 7/6/2022
                 resetBall();
             }
         }
+
+        function endGame() {
+          if (leftScore == 3 && rightScore == 0) {
+              resetGame();
+          }
+          else if (rightScore == 3 && leftScore == 0) {
+              resetGame();
+          }
+        }
+
         function drawScores() {
             // Draw the scores
             context.fillStyle = '#000000';
@@ -232,6 +242,7 @@
             movePaddle();
             doAI();
             moveBall();
+            endGame();
 
             checkPaddleCollision();
             checkScore();

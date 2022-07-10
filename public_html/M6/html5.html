@@ -212,15 +212,21 @@
             }
         }
 
-        function endGame() {
-          if (leftScore == 3 && rightScore == -3) {
-              resetGame();
+        function newScore(){
+          if(leftScore == 5){
+            leftScore = 0;
+            rightScore = 0;
+            alert("Game Over! Left Side is the winner. Click OK to play again!")
           }
-          else if (rightScore == 3 && leftScore == -3) {
-              resetGame();
+          else if(rightScore == 5){
+            rightScore = 0;
+            leftScore = 0;
+            alert("Game Over! Right Side is the winner. Click OK to play again.")
           }
         }
 
+// Event listeners for reload
+reloadButton.addEventListener("click", reload, false);
         function drawScores() {
             // Draw the scores
             context.fillStyle = '#000000';
@@ -242,7 +248,7 @@
             movePaddle();
             doAI();
             moveBall();
-            endGame();
+            newScore();
 
             checkPaddleCollision();
             checkScore();
@@ -261,21 +267,21 @@
         canvas:not(:focus){
             border: 1px dotted black;
         }
+
     </style>
 </head>
 
 <body onload="init();">
     <div>
-    <h1 style="display: inline;">AI Pong Sample</h1>
+    <h1 style="display: inline;">Adam's Pong Sample</h1>
     <h3 style="display: inline;"><a href="index.html">Back</a></h3>
     </div>
     <a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of Canvas based games by Ben
         Centra</a>
     <main>
-        <canvas tabindex="0" id="board" width="600px" height="600px" >
+        <canvas tabindex="0" id="board" width="600px" height="600px">
 
         </canvas>
     </main>
 </body>
-
 </html>

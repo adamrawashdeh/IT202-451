@@ -241,16 +241,11 @@ require_once(__DIR__ . "/../../partials/nav.php");
         }
 
         function newScore(){ //aor9 7/10/2022
-          if(leftScore == 5){
+          if(rightScore == 3){
             save_score();
             leftScore = 0;
             rightScore = 0;
-            alert("Game Over! Left Side is the winner. Click OK to play again!")
-          }
-          else if(rightScore == 5){
-            rightScore = 0;
-            leftScore = 0;
-            alert("Game Over! Right Side is the winner. Click OK to play again.")
+            alert("Game Over! Click OK to play again!")
           }
         }
 

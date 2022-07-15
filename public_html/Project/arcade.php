@@ -313,7 +313,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
 <body onload="init();">
     <div>
     <h1 style="display: inline;">Adam's Arcade Pong Game</h1>
-    <h3 style="display: inline;"><a href="index.html">Back</a></h3>
+    <h3 style="display: inline;"><a href="home.php">Back</a></h3>
     </div>
     <main>
         <canvas tabindex="0" id="board" width="600px" height="600px">

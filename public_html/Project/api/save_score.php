@@ -20,7 +20,7 @@ function save_score($score)
     if (is_logged_in()) {
         //todo save
         $db = getDB();
-        $stmt = $db->prepare("INSERT INTO RM_Scores(score, user_id) VALUES (:s, :uid)");
+        $stmt = $db->prepare("INSERT INTO Scores(score, user_id) VALUES (:s, :uid)");
         try {
             $stmt->execute([":s" => $score, ":uid" => get_user_id()]);
             $response["status"] = 200;

@@ -61,7 +61,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
             console.log(Object.keys(data).map(function(key) {
                 return "" + key + "=" + data[key]; // line break for wrapping only
             }).join("&"));
-            if (example === 1) {
+            //if (example === 1) {
             // Default options are marked with *
                 const response = await fetch(url, {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -80,7 +80,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
             });
             return response.json(); // parses JSON response into native JavaScript objects
             }
-        }
+        
 
         function resetBall() {
             ball.x = canvas.width / 2 - ball.w / 2;
@@ -268,6 +268,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
                         }
                     })
         }
+
 
 // Event listeners for reload
         function drawScores() {

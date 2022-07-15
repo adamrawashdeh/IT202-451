@@ -9,7 +9,7 @@ if (is_logged_in(true)) {
     error_log("Session data: " . var_export($_SESSION, true));
 }
 ?>
-<a href = http://localhost:3000/Project/htmlarcade.html> Pong Game</a>
+<a href = http://localhost:3000/Project/arcade.php> Pong Game</a>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../../partials/nav.php");
+require_once(__DIR__ . "/../../partials/nav.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -256,7 +256,7 @@ require_once(__DIR__ . "/../../../partials/nav.php");
 
         function save_score() {
                     postData({
-                        score: gameData.score,
+                        score: leftScore,
                     }, "/Project/api/save_score.php").then(data => {
                         console.log(data);
                         if (data.status === 200) {
@@ -268,6 +268,8 @@ require_once(__DIR__ . "/../../../partials/nav.php");
                         }
                     })
         }
+
+        save_score();
 
 // Event listeners for reload
 reloadButton.addEventListener("click", reload, false);
@@ -320,8 +322,6 @@ reloadButton.addEventListener("click", reload, false);
     <h1 style="display: inline;">Adam's Arcade Pong Game</h1>
     <h3 style="display: inline;"><a href="index.html">Back</a></h3>
     </div>
-    <a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of Canvas based games by Ben
-        Centra</a>
     <main>
         <canvas tabindex="0" id="board" width="600px" height="600px">
 
@@ -329,4 +329,4 @@ reloadButton.addEventListener("click", reload, false);
     </main>
 </body>
 </html>
-<?php require(__DIR__ . "/../../partials/footer.php");
+<?php require_once(__DIR__."/../../partials/flash.php");

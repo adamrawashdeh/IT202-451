@@ -61,7 +61,6 @@ require_once(__DIR__ . "/../../partials/nav.php");
             console.log(Object.keys(data).map(function(key) {
                 return "" + key + "=" + data[key]; // line break for wrapping only
             }).join("&"));
-            let example = 1;
             if (example === 1) {
             // Default options are marked with *
                 const response = await fetch(url, {
@@ -243,6 +242,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
 
         function newScore(){ //aor9 7/10/2022
           if(leftScore == 5){
+            save_score();
             leftScore = 0;
             rightScore = 0;
             alert("Game Over! Left Side is the winner. Click OK to play again!")
@@ -269,10 +269,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
                     })
         }
 
-        save_score();
-
 // Event listeners for reload
-reloadButton.addEventListener("click", reload, false);
         function drawScores() {
             // Draw the scores
             context.fillStyle = '#000000';

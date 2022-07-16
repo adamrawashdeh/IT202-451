@@ -4,12 +4,29 @@ require(__DIR__ . "/../../partials/nav.php");
 <h1>Home</h1>
 <?php
 
-if (is_logged_in(true)) {
+/*if (is_logged_in(true)) {
     //comment this out if you don't want to see the session variables
     error_log("Session data: " . var_export($_SESSION, true));
-}
+}*/
 ?>
-<a href = http://localhost:3000/Project/arcade.php> Pong Game</a>
+
+<?php
+    //this is day which is the default
+    require(__DIR__ . "/../../partials/scores_table.php");
+    ?>
+    <?php
+    $duration = "week";
+    require(__DIR__ . "/../../partials/scores_table.php");
+    ?>
+    <?php
+    $duration = "month";
+    require(__DIR__ . "/../../partials/scores_table.php");
+    ?>
+    <?php
+    $duration = "lifetime";
+    require(__DIR__ . "/../../partials/scores_table.php");
+    ?>
+    
 <?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>

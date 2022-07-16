@@ -30,7 +30,7 @@ function get_top_10($duration = "day")
         Scores.created <= addtime(LAST_DAY(CURDATE()), '23:59:59')";
     }
     //remember to prefix any ambiguous columns (Users and Scores both have created, modified, and id columns)
-    $query .= " ORDER BY score Desc, RM_Scores.created desc LIMIT 10"; //newest of the same score is ranked higher
+    $query .= " ORDER BY score Desc, Scores.created desc LIMIT 10"; //newest of the same score is ranked higher
     error_log("get top 10 query: $query");
     $stmt = $db->prepare($query);
     $results = [];

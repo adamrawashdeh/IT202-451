@@ -42,9 +42,9 @@ require_once(__DIR__ . "/../../partials/nav.php");
             if (canvas.getContext) {
                 context = canvas.getContext("2d");
                 let offset = canvas.width*.05;
-                leftPaddle = makeRect(offset, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, paddleSpeed, '#BC0000');
-                rightPaddle = makeRect(canvas.width - paddleWidth - offset, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, paddleSpeed, '#0000BC');
-                ball = makeRect(0, 0, ballSize, ballSize, ballSpeed, '#000000');
+                leftPaddle = makeRect(offset, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, paddleSpeed, '#FFC0CB');
+                rightPaddle = makeRect(canvas.width - paddleWidth - offset, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, paddleSpeed, '#800080');
+                ball = makeRect(0, 0, ballSize, ballSize, ballSpeed, '#DE3163');
                 drawables.push(leftPaddle);
                 drawables.push(rightPaddle);
                 drawables.push(ball);

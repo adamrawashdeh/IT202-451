@@ -13,6 +13,7 @@ if (in_array($duration, ["day", "week", "month", "lifetime"])) {
     }
     $results = get_latest_scores($user_id);
 }
+
 switch ($duration) {
     case "day":
         $title = "Top Scores Today";

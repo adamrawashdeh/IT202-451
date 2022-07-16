@@ -34,8 +34,9 @@ require(__DIR__ . "/../../partials/nav.php");
 <summary>
 Pong Game Description:<br>
 1. When a player scores, a point is added to their side.<br>
-2. The objective for the left side is to score as much points as they can before right side meets its set score.<br>
-3. Game ends once right side scores 3 points.<br>
+2. To move up use either the UP key or W key. To move down use either the DOWN key or S key.<br>
+3. The objective for the left side is to score as much points as they can before right side meets its set score.<br>
+4. Game ends once right side scores 3 points.<br>
 </summary>
 
 <style>

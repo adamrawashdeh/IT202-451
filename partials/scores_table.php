@@ -35,14 +35,13 @@ switch ($duration) {
         break;
 }
 ?>
-<div class="card bg-light">
-    <div class="card-body">
-        <div class="card-title">
+    <div class="body">
+        <div class="title">
             <div class="fw-bold fs-3">
                 <?php se($title); ?>
             </div>
         </div>
-        <div class="card-text">
+        <div class="text">
             <table class="table">
                 <?php if (count($results) == 0) : ?>
                     <p>No results to show</p>

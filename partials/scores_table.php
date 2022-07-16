@@ -65,4 +65,4 @@ switch ($duration) {
         </table>
         </div>
     </div>
-</div>)
+</div>

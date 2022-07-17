@@ -245,7 +245,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
             save_score();
             leftScore = 0;
             rightScore = 0;
-            alert("Game Over! Click OK to play again!")
+            alert("Game Over! Score has been saved. Click OK to play again!")
           }
         }
 

@@ -36,16 +36,16 @@
     - [x] \(07/04/2022 of completion) User will be able to edit their profile
         -  Link to related .md file: [User Profile](https://github.com/adamrawashdeh/IT202-451/pull/16)  
 - Milestone 2
-    - [ ] \(07/dd/2022 of completion) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(07/dd/2022 of completion) The system will save the user’s score at the end of the game only if the user is logged in
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(07/dd/2022 of completion) The user will be able to see their latest 10 scores
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(07/dd/2022 of completion) Create function(s) that output the following scoreboards
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(07/dd/2022 of completion) Create a Homepage
-        -  Link to related .md file: [Link Name](link url)
+    - [x] \(07/9/2022 of completion) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator
+        -  Link to related .md file: [Housekeeping](link url)
+    - [x] \(07/14/2022 of completion) The system will save the user’s score at the end of the game only if the user is logged in
+        -  Link to related .md file: [UserProfile](link url)
+    - [x] \(07/15/2022 of completion) The user will be able to see their latest 10 scores
+        -  Link to related .md file: [UserProfile](link url)
+    - [x] \(07/15/2022 of completion) Create function(s) that output the following scoreboards
+        -  Link to related .md file: [UserProfile](link url)
+    - [x] \(07/16/2022 of completion) Create a Homepage
+        -  Link to related .md file: [UserHome](link url)
 - Milestone 3
   - (duplicate template here for Milestone 1 features)
 - Milestone 4

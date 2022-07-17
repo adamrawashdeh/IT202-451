@@ -1,4 +1,4 @@
-<?php
+<?php //Feat-UserScores
 require_once(__DIR__ . "/../../../lib/functions.php");
 error_log("save_score received data: " . var_export($_REQUEST, true));
 

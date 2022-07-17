@@ -37,15 +37,15 @@
         -  Link to related .md file: [User Profile](https://github.com/adamrawashdeh/IT202-451/pull/16)  
 - Milestone 2
     - [x] \(07/9/2022 of completion) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator
-        -  Link to related .md file: [Housekeeping](link url)
+        -  Link to related .md file: [Milestone2](https://github.com/adamrawashdeh/IT202-451/pull/56)
     - [x] \(07/14/2022 of completion) The system will save the user’s score at the end of the game only if the user is logged in
-        -  Link to related .md file: [UserProfile](link url)
+        -  Link to related .md file: [Feat-UserScore](https://github.com/adamrawashdeh/IT202-451/pull/50)
     - [x] \(07/15/2022 of completion) The user will be able to see their latest 10 scores
-        -  Link to related .md file: [UserProfile](link url)
+        -  Link to related .md file: [Feat-UserLatestScore](https://github.com/adamrawashdeh/IT202-451/pull/54)
     - [x] \(07/15/2022 of completion) Create function(s) that output the following scoreboards
-        -  Link to related .md file: [UserProfile](link url)
+        -  Link to related .md file: [Feat-UserTop10](https://github.com/adamrawashdeh/IT202-451/pull/52)
     - [x] \(07/16/2022 of completion) Create a Homepage
-        -  Link to related .md file: [UserHome](link url)
+        -  Link to related .md file: [Feat-UserHomepage](https://github.com/adamrawashdeh/IT202-451/pull/55)
 - Milestone 3
   - (duplicate template here for Milestone 1 features)
 - Milestone 4

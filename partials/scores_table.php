@@ -1,4 +1,4 @@
-<?php
+<?php //newone
 //requires functions.php
 //requires a duration to be set
 if (!isset($duration)) {

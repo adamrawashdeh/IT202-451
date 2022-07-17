@@ -16,7 +16,14 @@
 nav li{display: inline; background-color: white;}
 nav li a{color: black}
 input{border-radius: 5%;}
-body{
+/*body{
     background-color: salmon;
     color: black(153, 0, 153);
+}*/
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-weight: 100;
+    background: radial-gradient(#420a6c,#ac6775);
 }

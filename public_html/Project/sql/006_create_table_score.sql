@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `Scores` 
+CREATE TABLE IF NOT EXISTS `Scores` #Feat-UserScores
 (
     `id`        int auto_increment not null,
     `user_id`   int,

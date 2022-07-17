@@ -1,4 +1,4 @@
-<?php
+<?php //newone
 require_once(__DIR__ . "/../../partials/nav.php");
 ?>
 <!DOCTYPE html>

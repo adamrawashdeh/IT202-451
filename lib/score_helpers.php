@@ -1,4 +1,4 @@
-<?php
+<?php //newone
 
 /** Gets the top 10 scores for valid durations (day, week, month, lifetime) */
 function get_top_10($duration = "day")

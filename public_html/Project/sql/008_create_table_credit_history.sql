@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS `Credit_History`(
+CREATE TABLE IF NOT EXISTS `Credit_History`
+(
     `id` int AUTO_INCREMENT PRIMARY KEY,
     `credit_diff` int,
     `user_id` int,

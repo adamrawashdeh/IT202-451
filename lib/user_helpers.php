@@ -54,8 +54,11 @@ function get_credits($user_id)
     try {
         $stmt->execute([":id" => $user_id]);
         $r = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($r) {
+            return (int)se($r, "credit", 0, false);
+        }
     } catch (PDOException $e) {
         error_log("Error fetching credits for user $user_id: " . var_export($e->errorInfo, true));
-        flash("Error looking up credits", "danger");
     }
+    return 0;
 }

@@ -88,6 +88,9 @@ $username = get_username();
 <div>
         Best Score: <?php echo get_best_score(get_user_id()); ?>
     </div>
+<div>
+        Credits: <?php echo get_credits(get_user_id()); ?>
+    </div>
     <div>
         <?php
         $duration = "latest";

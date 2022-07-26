@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `Competitions`
     `current_reward` INT  DEFAULT (`starting_reward`),
     `starting_reward` INT DEFAULT 1,
     `join_fee` INT DEFAULT 1,
-    `current_participant` INT DEFAULT 0,
+    `current_participants` INT DEFAULT 0,
     `min_participants` INT DEFAULT 3,
     `paid_out` TINYINT(1) DEFAULT 0,
     `did_calc` TINYINT(1) DEFAULT 0,
@@ -19,12 +19,13 @@ CREATE TABLE IF NOT EXISTS `Competitions`
     `created_by` INT,
     `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY(`creator_by`) REFERENCES `Users`(`id`),
-    check (`first_place` + `second_place` + `third_place` = 100),
+    PRIMARY KEY (`id`),
+    FOREIGN KEY(`created_by`) REFERENCES `Users`(`id`),
+    check (`first_place_per` + `second_place_per` + `third_place_per` = 100),
     check (`min_score` >= 0),
     check (`starting_reward` >= 1),
     check (`current_reward` >= `starting_reward`),
-    check (`min_participants1` >= 3),
+    check (`min_participants` >= 3),
     check (`current_participants` >= 0),
-    check(`join_cost` >= 0)
+    check(`join_fee` >= 0)
 )

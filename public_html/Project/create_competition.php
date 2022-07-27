@@ -63,12 +63,6 @@ if (isset($_POST["name"]) && !empty($_POST["name"])) {
             <label for="duration" class="form-label">Duration (in Days)</label>
             <input id="duration" name="duration" type="number" class="form-control" placeholder=">= 3" min="3" />
         </div>
-        <div class="mb-3">
-            <label for="po" class="form-label">Payout Option</label>
-            <select id="po" name="payout_option" class="form-control">
-                <?php foreach ($payout_options as $po) : ?>
-                    <option value="<?php se($po, 'id'); ?>"><?php se($po, 'place'); ?></option>
-                <?php endforeach; ?>
             </select>
         </div>
         <div class="mb-3">

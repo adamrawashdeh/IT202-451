@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `Competitions`
     `min_participants` INT DEFAULT 3,
     `paid_out` TINYINT(1) DEFAULT 0,
     `did_calc` TINYINT(1) DEFAULT 0,
-    `min_score` INT DEFAULT 0,
+    `min_score` INT DEFAULT 1,
     `first_place_per` INT DEFAULT 50,
     `second_place_per` INT DEFAULT 30,
     `third_place_per` INT DEFAULT 20,
@@ -22,10 +22,10 @@ CREATE TABLE IF NOT EXISTS `Competitions`
     PRIMARY KEY (`id`),
     FOREIGN KEY(`created_by`) REFERENCES `Users`(`id`),
     check (`first_place_per` + `second_place_per` + `third_place_per` = 100),
-    check (`min_score` >= 0),
+    check (`min_score` >= 1),
     check (`starting_reward` >= 1),
     check (`current_reward` >= `starting_reward`),
     check (`min_participants` >= 3),
     check (`current_participants` >= 0),
-    check(`join_fee` >= 0)
+    check(`join_fee` >= 1)
 )

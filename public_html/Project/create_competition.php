@@ -3,22 +3,12 @@ require_once(__DIR__ . "/../../partials/nav.php");
 is_logged_in(true);
 $db = getDB();
 $stmt = $db->prepare("SELECT id, CONCAT(first_place,'% - ', second_place, '% - ', third_place, '%') as place FROM Competitions");
-try {
-    $stmt->execute();
-    $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($r) {
-        $payout_options = $r;
-    }
-} catch (PDOException $e) {
-    flash("There was a problem fetching first, second, third place options", "danger");
-    error_log("Error Getting Places: " . var_export($e, true));
-}
 //save
-if (isset($_POST["title"]) && !empty($_POST["title"])) {
+if (isset($_POST["name"]) && !empty($_POST["name"])) {
     $cost = (int)se($_POST, "starting_reward", 0, false);
     $cost++;
-    $cost += (int)se($_POST, "join_cost", 0, false);
-    $title = se($_POST, "title", "N/A", false);
+    $cost += (int)se($_POST, "join_fee", 0, false);
+    $title = se($_POST, "name", "N/A", false);
     
     $credits = get_credits($user_id); 
     if ($credits >= 1) {
@@ -50,8 +40,8 @@ if (isset($_POST["title"]) && !empty($_POST["title"])) {
     <h1>Create Competition</h1>
     <form method="POST">
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input id="title" name="title" class="form-control" />
+            <label for="name" class="form-label">Name</label>
+            <input id="name" name="name" class="form-control" />
         </div>
         <div class="mb-3">
             <label for="reward" class="form-label">Starting Reward</label>

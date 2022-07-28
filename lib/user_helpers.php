@@ -48,14 +48,14 @@ function get_user_id()
 }
 function get_credits($user_id)
 {
-    $query = "SELECT credit from Users WHERE user_id = :id";
+    $query = "SELECT credits from Users WHERE user_id = :id";
     $db = getDB();
     $stmt = $db->prepare($query);
     try {
         $stmt->execute([":id" => $user_id]);
         $r = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($r) {
-            return (int)se($r, "credit", 0, false);
+            return (int)se($r, "credits", 0, false);
         }
     } catch (PDOException $e) {
         error_log("Error fetching credits for user $user_id: " . var_export($e->errorInfo, true));

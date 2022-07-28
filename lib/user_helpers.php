@@ -48,7 +48,7 @@ function get_user_id()
 }
 function get_credits($user_id)
 {
-    $query = "SELECT credits from Users WHERE user_id = :id";
+    $query = "SELECT credits from Users WHERE id = :id";
     $db = getDB();
     $stmt = $db->prepare($query);
     try {

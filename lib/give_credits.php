@@ -20,7 +20,7 @@ function give_credits($credits, $user_id, $reason, $details = "")
         $db = getDB();
         $stmt = $db->prepare($query);
         try {
-            $stmt->execute($params);    
+            $stmt->execute($params);
             $query = "UPDATE Users SET credits = (SELECT IFNULL(SUM(credit_diff), 0) FROM Credit_History WHERE user_id = :id) WHERE id = :id";
             $stmt = $db->prepare($query);
                 $stmt->execute([":id" => get_user_id()]);

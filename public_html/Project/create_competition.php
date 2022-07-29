@@ -13,7 +13,7 @@ if (isset($_POST["name"]) && !empty($_POST["name"])) {
     $credits = get_credits($user_id); 
     if ($credits >= 1) {
         $db->beginTransaction();
-        if (give_credits($cost, "create_comp", get_user_id(), -1, "Create Competition $title")) {
+        if (give_credits($cost, "create_comp", get_user_id(), "Create Competition $title")) {
             $_POST["created_by"] = get_user_id();
             $comp_id = save_data("Competitions", $_POST);
             if ($comp_id > 0) {
@@ -56,7 +56,7 @@ if (isset($_POST["name"]) && !empty($_POST["name"])) {
             <input id="mp" name="min_participants" type="number" class="form-control" placeholder=">= 3" min="3" />
         </div>
         <div class="mb-3">
-            <label for="jc" class="form-label">Join Cost</label>
+            <label for="jc" class="form-label">Join Fee</label>
             <input id="jc" name="join_fee" type="number" class="form-control" onchange="updateCost()" placeholder=">= 0" min="0" />
         </div>
         <div class="mb-3">

@@ -10,10 +10,10 @@ if (isset($_POST["name"]) && !empty($_POST["name"])) {
     $cost += (int)se($_POST, "join_fee", 0, false);
     $title = se($_POST, "name", "N/A", false);
     
-    $credits = get_credits($user_id); 
+    $credits = get_credits(get_user_id()) - $cost; 
     if ($credits >= 1) {
         $db->beginTransaction();
-        if (give_credits($cost, "create_comp", get_user_id(), "Create Competition $title")) {
+        if (give_credits(-$cost, get_user_id(), "create_comp", "Create Competition $title")) {
             $_POST["created_by"] = get_user_id();
             $comp_id = save_data("Competitions", $_POST);
             if ($comp_id > 0) {

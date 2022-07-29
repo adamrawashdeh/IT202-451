@@ -34,6 +34,7 @@ session_start();
             <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
             <li><a class="dropdown-item" href="<?php echo get_url('create_competition.php'); ?>">Create</a></li>
             <li><a class="dropdown-item" href="<?php echo get_url('list_competitions.php'); ?>">List</a></li>
+            <li><a class="dropdown-item" href="<?php echo get_url('view_competitions.php'); ?>">List</a></li>
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
             <li><a href="<?php echo get_url('login.php'); ?>">Login</a></li>

@@ -6,7 +6,7 @@ $db = getDB();
 if (isset($_POST["join"])) {
     $user_id = get_user_id();
     $comp_id = se($_POST, "comp_id", 0, false);
-    $cost = se($_POST, "join_cost", 0, false);
+    $cost = se($_POST, "join_fee", 0, false);
     join_competition($comp_id, $user_id, $cost);
 }
 $id = se($_GET, "id", -1, false);
@@ -24,7 +24,7 @@ try {
     $r = $stmt->fetch();
     if ($r) {
         $row = $r;
-        $comp = se($r, "title", "N/A", false);
+        $comp = se($r, "name", "N/A", false);
     }
 } catch (PDOException $e) {
     flash("There was a problem fetching competitions, please try again later", "danger");

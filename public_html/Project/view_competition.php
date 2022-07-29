@@ -73,7 +73,7 @@ try {
     $title = $comp . " Top Scores";
     $comp_id = $id;
     $duration = "competiton";
-    include(__DIR__ . "/../../partials/score_table.php");
+    include(__DIR__ . "/../../partials/scores_table.php");
     ?>
 </div>
 <?php

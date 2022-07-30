@@ -78,9 +78,9 @@ function get_top_scores_for_comp($comp_id, $limit = 10)
     //get score, user_id, created, then use dense rank to rank the scores of each user
     //outer query pulls rank 1 for each user (their best)
     //I join accounts here so I can repurpose this to payout winners. Acade project would just use the user's id.
-    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score,s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores 
+    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score,s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s 
     JOIN UserComps uc on uc.user_id = s.user_id
-    JOIN Competitions c on uc.competition_id = c.id
+    JOIN Competitions c on uc.comp_id = c.id
     WHERE c.id = :cid AND s.created BETWEEN uc.created AND c.expires
     )as t where `rank` = 1 ORDER BY score desc LIMIT :limit");
     $scores = [];
@@ -103,7 +103,7 @@ function calc_winners()
     $db = getDB();
     error_log("Starting winner calc");
     $calced_comps = [];
-    $stmt = $db->prepare("select c.id,c.title, first_place, second_place, third_place, current_reward 
+    $stmt = $db->prepare("select c.id,c.name, first_place_per, second_place_per, third_place_per, current_reward 
     from Competitions where expires <= CURRENT_TIMESTAMP() AND did_calc = 0 AND current_participants >= min_participants LIMIT 10");
     try {
         $stmt->execute();

@@ -3,7 +3,7 @@
 function update_participants($comp_id)
 {
     $db = getDB();
-    $stmt = $db->prepare("UPDATE Competitions set current_participants = (SELECT IFNULL(COUNT(1),0) FROM UserComps WHERE comp_id = :cid), 
+    $stmt = $db->prepare("UPDATE Competitions set current_participants = (SELECT IFNULL(COUNT(1),0) FROM CompetitionParticipants WHERE comp_id = :cid), 
     current_reward = current_reward + CEILING(join_cost * 0.5) WHERE id = :cid");
     try {
         $stmt->execute([":cid" => $comp_id]);
@@ -17,7 +17,7 @@ function update_participants($comp_id)
 function add_to_competition($comp_id, $user_id)
 {
     $db = getDB();
-    $stmt = $db->prepare("INSERT INTO UserComps (user_id, comp_id) VALUES (:uid, :cid)");
+    $stmt = $db->prepare("INSERT INTO CompetitionParticipants (user_id, comp_id) VALUES (:uid, :cid)");
     try {
         $stmt->execute([":uid" => $user_id, ":cid" => $comp_id]);
         update_participants($comp_id);
@@ -79,7 +79,7 @@ function get_top_scores_for_comp($comp_id, $limit = 10)
     //outer query pulls rank 1 for each user (their best)
     //I join accounts here so I can repurpose this to payout winners. Acade project would just use the user's id.
     $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score, s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s 
-    JOIN UserComps uc on uc.user_id = s.user_id
+    JOIN CompetitionParticipants uc on uc.user_id = s.user_id
     JOIN Competitions c on uc.comp_id = c.id
     WHERE c.id = :cid AND s.created BETWEEN uc.created AND c.expires
     )as t where `rank` = 1 ORDER BY score desc LIMIT :limit");

@@ -16,7 +16,7 @@ if ($id < 1) {
 } 
 //handle page load
 $stmt = $db->prepare("SELECT Competitions.id , name, min_participants, current_participants, current_reward, expires, created_by, min_score, join_fee, IF(comp_id is null, 0, 1) as joined,  CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
-LEFT JOIN (SELECT * FROM UserComps where UserComps.user_id = :uid) as t on t.comp_id = Competitions.id WHERE Competitions.id = :cid");
+LEFT JOIN (SELECT * FROM CompetitionParticipants where CompetitionParticipants.user_id = :uid) as t on t.comp_id = Competitions.id WHERE Competitions.id = :cid");
 $row = [];
 $comp = "";
 try {

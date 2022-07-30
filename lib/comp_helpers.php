@@ -78,7 +78,7 @@ function get_top_scores_for_comp($comp_id, $limit = 10)
     //get score, user_id, created, then use dense rank to rank the scores of each user
     //outer query pulls rank 1 for each user (their best)
     //I join accounts here so I can repurpose this to payout winners. Acade project would just use the user's id.
-    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score,s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s 
+    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score, s.created, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM Scores s 
     JOIN UserComps uc on uc.user_id = s.user_id
     JOIN Competitions c on uc.comp_id = c.id
     WHERE c.id = :cid AND s.created BETWEEN uc.created AND c.expires

@@ -113,9 +113,9 @@ function calc_winners()
             $rc = $stmt->rowCount();
             error_log("Validating $rc comps");
             foreach ($r as $row) {
-                $fp = floatval(se($row, "first_place", 0, false) / 100);
-                $sp = floatval(se($row, "second_place", 0, false) / 100);
-                $tp = floatval(se($row, "third_place", 0, false) / 100);
+                $fp = floatval(se($row, "first_place_per", 0, false) / 100);
+                $sp = floatval(se($row, "second_place_per", 0, false) / 100);
+                $tp = floatval(se($row, "third_place_per", 0, false) / 100);
                 $reward = (int)se($row, "current_reward", 0, false);
                 $title = se($row, "name", "-", false);
                 $fpr = ceil($reward * $fp);

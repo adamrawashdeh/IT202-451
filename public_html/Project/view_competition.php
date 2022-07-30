@@ -15,8 +15,8 @@ if ($id < 1) {
     redirect("list_competitions.php");
 } 
 //handle page load
-$stmt = $db->prepare("SELECT Competitions.id , title, min_participants, current_participants, current_reward, expires, created_by, min_score, join_fee, IF(comp_id is null, 0, 1) as joined,  CONCAT(first_place,'% - ', second_place, '% - ', third_place, '%') as place FROM Competitions
-LEFT JOIN (SELECT * FROM UserComps where UserComps.user_id = :uid) as t on t.competition_id = Competitions.id WHERE Competitions.id = :cid");
+$stmt = $db->prepare("SELECT Competitions.id , name, min_participants, current_participants, current_reward, expires, created_by, min_score, join_fee, IF(comp_id is null, 0, 1) as joined,  CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
+LEFT JOIN (SELECT * FROM UserComps where UserComps.user_id = :uid) as t on t.comp_id = Competitions.id WHERE Competitions.id = :cid");
 $row = [];
 $comp = "";
 try {
@@ -63,7 +63,7 @@ try {
                 </td>
             <?php else : ?>
                 <tr>
-                    <td colspan="100%">No active competitins</td>
+                    <td colspan="100%">No active competitions</td>
                 </tr>
             <?php endif; ?>
         </tbody>

@@ -98,7 +98,7 @@ function get_top_scores_for_comp($comp_id, $limit = 10)
     }
     return $scores;
 } 
-function calc_winners()
+function calc_winners() //aor9 07/31/2022
 {
     $db = getDB();
     error_log("Starting winner calc");

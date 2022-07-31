@@ -29,8 +29,12 @@ function give_credits($credits, $user_id, $reason, $details = "")
             error_log(var_export($e->errorInfo, true));
             flash("There was an error transfering credits", "danger");
         }
+    } else if ($credits === 0) {
+        error_log("Freebie purchase");
+        flash("You got something for free!", "success");
+        return true;
+        }
         return false;
-    }
 }
 /*    if ($credits != 0) {
         $query = "UPDATE Users SET credits = (SELECT IFNULL(SUM(credit_diff), 0) FROM Credit_History WHERE user_id = :id) WHERE id = :id";

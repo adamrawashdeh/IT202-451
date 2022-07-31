@@ -4,7 +4,7 @@ function update_participants($comp_id)
 {
     $db = getDB();
     $stmt = $db->prepare("UPDATE Competitions set current_participants = (SELECT IFNULL(COUNT(1),0) FROM CompetitionParticipants WHERE comp_id = :cid), 
-    current_reward = current_reward + CEILING(join_cost * 0.5) WHERE id = :cid");
+    current_reward = current_reward + CEILING(join_fee * 0.5) WHERE id = :cid");
     try {
         $stmt->execute([":cid" => $comp_id]);
         return true;

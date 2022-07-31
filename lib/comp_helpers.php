@@ -4,7 +4,7 @@ function update_participants($comp_id)
 {
     $db = getDB();
     $stmt = $db->prepare("UPDATE Competitions set current_participants = (SELECT IFNULL(COUNT(1),0) FROM CompetitionParticipants WHERE comp_id = :cid), 
-    current_reward = (current_reward + CEILING(join_fee * 0.5)) WHERE id = :cid");
+    current_reward = IF(join_fee > 0, current_reward + CEILING(join_fee * 0.5), current_reward + 1) WHERE id = :cid");
     try {
         $stmt->execute([":cid" => $comp_id]);
         return true;
@@ -29,7 +29,7 @@ function add_to_competition($comp_id, $user_id)
 }
 function join_competition($comp_id, $user_id, $cost)
 {
-    $credits = get_credits(get_user_id());
+    $credits = get_credits($user_id);
     if ($comp_id > 0) {
         if ($credits >= $cost) {
             $db = getDB();
@@ -41,8 +41,8 @@ function join_competition($comp_id, $user_id, $cost)
                     $cost = (int)se($r, "join_fee", 0, false);
                     $title = se($r, "name", "", false);
                     if ($credits >= $cost) {
-                        if (give_credits($cost, "join-comp", get_user_id(), "Joining competition $title")) {
-                            if (add_to_competition($comp_id, get_user_id())) {
+                        if (give_credits($cost, "join-comp", $user_id, "Joining competition $title")) {
+                            if (add_to_competition($comp_id, $user_id)) {
                                 flash("Successfully joined $title", "success");
                             }
                         } else {

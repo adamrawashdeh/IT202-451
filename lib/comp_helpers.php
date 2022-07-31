@@ -29,9 +29,9 @@ function add_to_competition($comp_id, $user_id)
 }
 function join_competition($comp_id, $user_id, $cost)
 {
-    $balance = get_credits($user_id);
+    $credits = get_credits(get_user_id());
     if ($comp_id > 0) {
-        if ($balance >= $cost) {
+        if ($credits >= $cost) {
             $db = getDB();
             $stmt = $db->prepare("SELECT name, join_fee from Competitions where id = :id");
             try {
@@ -40,9 +40,9 @@ function join_competition($comp_id, $user_id, $cost)
                 if ($r) {
                     $cost = (int)se($r, "join_fee", 0, false);
                     $title = se($r, "name", "", false);
-                    if ($balance >= $cost) {
-                        if (give_credits(-$cost, "join-comp", get_user_id(), "Joining competition $title")) {
-                            if (add_to_competition($comp_id, $user_id)) {
+                    if ($credits >= $cost) {
+                        if (give_credits($cost, "join-comp", get_user_id(), "Joining competition $title")) {
+                            if (add_to_competition($comp_id, get_user_id())) {
                                 flash("Successfully joined $title", "success");
                             }
                         } else {

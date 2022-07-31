@@ -11,7 +11,7 @@ if (isset($_POST["name"]) && !empty($_POST["name"])) {
     $title = se($_POST, "name", "N/A", false);
     
     $credits = get_credits(get_user_id()); 
-    if ($credits >= 1) {
+    if ($credits >= $cost) {
         $db->beginTransaction();
         if (give_credits(-$cost, get_user_id(), "create_comp", "Create Competition $title")) {
             $_POST["created_by"] = get_user_id();

@@ -1,0 +1,2 @@
+INSERT INTO `Credit_History`(`credit_diff`, `user_id`, reason, details) VALUES(20, 10, 'credits','giving user the ability to create a competition');
+UPDATE Users SET credits = (SELECT IFNULL(SUM(credit_diff), 0) FROM Credit_History WHERE user_id = :id) WHERE id = :id;

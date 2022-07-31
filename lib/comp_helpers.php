@@ -39,11 +39,11 @@ function join_competition($comp_id, $user_id, $cost)
                 $r = $stmt->fetch(PDO::FETCH_ASSOC);
                 if ($r) {
                     $cost = (int)se($r, "join_fee", 0, false);
-                    $name = se($r, "name", "", false);
+                    $title = se($r, "name", "", false);
                     if ($balance >= $cost) {
-                        if (give_credits($cost, "join-comp", get_user_id(), -1, "Joining competition $name")) {
+                        if (give_credits(-$cost, "join-comp", get_user_id(), "Joining competition $title")) {
                             if (add_to_competition($comp_id, $user_id)) {
-                                flash("Successfully joined $name", "success");
+                                flash("Successfully joined $title", "success");
                             }
                         } else {
                             flash("Failed to pay for competition", "danger");

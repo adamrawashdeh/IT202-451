@@ -26,4 +26,14 @@ require(__DIR__ . "/get_url.php");
 
 require(__DIR__ . "/score_helpers.php");
 
+require(__DIR__ . "/give_credits.php"); //needs to be here
+
+require(__DIR__ . "/paginate.php");
+
+require(__DIR__ . "/redirect.php");
+
+require(__DIR__ . "/comp_helpers.php");
+
+require(__DIR__ . "/save_data.php");
+
 ?>

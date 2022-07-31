@@ -1,4 +1,4 @@
-<?php //latestscore
+<?php
 
 /** Gets the top 10 scores for valid durations (day, week, month, lifetime) */
 function get_top_10($duration = "day")
@@ -7,7 +7,7 @@ function get_top_10($duration = "day")
     //be very careful passing in a variable directly to SQL, I ensure it's a specific value from the in_array() above
     //Note: This is residual from using Option 1 and INTERVAL to generate the date offsets
     //but it's still good to keep here
-    if (in_array($duration, ["day", "week", "month", "lifetime"])) { //aor9 created: 07/15/2022
+    if (in_array($duration, ["day", "week", "month", "lifetime"])) { 
         //variable is safe
         $d = $duration;
     }

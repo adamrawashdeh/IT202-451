@@ -39,6 +39,7 @@ switch ($duration) {
         $title = "Invalid Scoreboard";
         break;
 }
+$ignored = ["id"];
 ?>
     <div class="body">
         <div class="title">
@@ -61,8 +62,17 @@ switch ($duration) {
                         <?php endif; ?>
                         <tr>
                             <?php foreach ($record as $column => $value) : ?>
-                                <td><?php se($value, null, "N/A"); ?></td>
-                            <?php endforeach; ?>
+                                <td>
+                                <td>
+                                    <?php if ($column === "username") : ?>
+                                        <?php $user_id = se($record, "user_id", 0, false);
+                                        $username = se($record, "username", "", false);
+                                        include(__DIR__ . "/profile_link.php"); ?>
+                                    <?php elseif (!in_array($column, $ignored)) : ?>
+                                        <?php se($value, null, "N/A"); ?></td>
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
                         </tr>
                     <?php endforeach; ?>
             </table>

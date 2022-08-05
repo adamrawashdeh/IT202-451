@@ -9,4 +9,4 @@ if (!has_role("Admin")) {
     redirect("home.php");
 }
 calc_winners();
-require(__DIR__ . "/../../../partials/footer.php");
+require(__DIR__ . "/../../../partials/flash.php");

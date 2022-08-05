@@ -101,7 +101,7 @@ try {
 
 <?php
 $email = get_user_email();
-$username = get_username();
+//$username = get_username();
 ?>
 <div>
         Best Score: <?php echo get_best_score($user_id); ?>

@@ -120,28 +120,27 @@ function calc_winners() //aor9 07/31/2022
                 $fpr = ceil($reward * $fp);
                 $spr = ceil($reward * $sp);
                 $tpr = ceil($reward * $tp);
-                $comp_id = se($row, "id", -1, false);
+                $comp_id = se($row, "id", false);
 
                 try {
                     $r = get_top_scores_for_comp($comp_id, 3);
                     if ($r) {
                         $atleastOne = false;
                         foreach ($r as $index => $row) {
-                            $aid = se($row, "account_id", -1, false);
                             $score = se($row, "score", 0, false);
-                            $user_id = se($row, "user_id", -1, false);
+                            $user_id = se($row, "user_id", false);
                             if ($index == 0) {
-                                if (give_credits($fpr, "won-comp", -1, $aid, "First place in $title with score of $score")) {
+                                if (give_credits($fpr, "won-comp", "First place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id First place in $title with score of $score");
                             } else if ($index == 1) {
-                                if (give_credits($spr, "won-comp", -1, $aid, "Second place in $title with score of $score")) {
+                                if (give_credits($spr, "won-comp", "Second place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id Second place in $title with score of $score");
                             } else if ($index == 2) {
-                                if (give_credits($tpr, "won-comp", -1, $aid, "Third place in $title with score of $score")) {
+                                if (give_credits($tpr, "won-comp", "Third place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id Third place in $title with score of $score");

@@ -104,7 +104,7 @@ function calc_winners() //aor9 07/31/2022
     error_log("Starting winner calc");
     $calced_comps = [];
     $stmt = $db->prepare("select c.id,c.name, first_place_per, second_place_per, third_place_per, current_reward 
-    from Competitions where expires <= CURRENT_TIMESTAMP() AND did_calc = 0 AND current_participants >= min_participants LIMIT 10");
+    from Competitions c where expires <= CURRENT_TIMESTAMP() AND did_calc = 0 AND current_participants >= min_participants LIMIT 10");
     try {
         $stmt->execute();
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -150,6 +150,9 @@ function calc_winners() //aor9 07/31/2022
                             array_push($calced_comps, $comp_id);
                         }
                     } else {
+                        $query = "UPDATE Competitions set did_calc = 1 WHERE id = :id";  
+                        $stmt = $db->prepare($query);
+                        $stmt->execute([":id" => $comp_id]);
                         error_log("No eligible scores");
                     }
                 } catch (PDOException $e) {

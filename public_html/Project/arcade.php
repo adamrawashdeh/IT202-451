@@ -245,25 +245,34 @@ require_once(__DIR__ . "/../../partials/nav.php"); //game finished
             save_score();
             leftScore = 0;
             rightScore = 0;
-            alert("Game Over! Score has been saved. Click OK to play again!")
+            //alert("Game Over! Score has been saved. Click OK to play again!")
           }
         }
 
         function save_score() {
-                    postData({
-                        score: leftScore,
-                    }, "/Project/api/save_score.php").then(data => {
-                        console.log(data);
-                        if (data.status === 200) {
-                            //saved successfully
-                            flash("Score has been saved.");
-                        } else {
-                            //some error occurred, maybe want to handle it before resetting
-                            flash("Error occurred!");
-                        }
-                    })
+            //if(rightScore == 3) {
+            postData({
+            score: leftScore,
+            }, "/Project/api/save_score.php").then(data => {
+            console.log(data);
+                if (data.status === 200) {
+                //saved successfully
+                    flash("Score has been saved.");
+                } else {
+                //some error occurred, maybe want to handle it before resetting
+                    flash("Error occurred!");
+                }
+                if (confirm("Do you want to play again?") == true){
+                    reload();
+                }
+                else{
+                    redirect(href="home.php");
+                }
+            })
+            /*leftScore = 0;
+            rightScore = 0;
+            }*/
         }
-
 
 // Event listeners for reload
         function drawScores() {
@@ -288,6 +297,7 @@ require_once(__DIR__ . "/../../partials/nav.php"); //game finished
             doAI();
             moveBall();
             newScore();
+            //save_score();
 
             checkPaddleCollision();
             checkScore();
@@ -322,4 +332,4 @@ require_once(__DIR__ . "/../../partials/nav.php"); //game finished
     </main>
 </body>
 </html>
-<?php require_once(__DIR__."/../../partials/flash.php");
+<?php require(__DIR__."/../../partials/flash.php");

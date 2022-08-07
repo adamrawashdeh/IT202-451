@@ -35,6 +35,8 @@ session_start();
             <li><a class="dropdown-item" href="<?php echo get_url('create_competition.php'); ?>">Create</a></li>
             <li><a class="dropdown-item" href="<?php echo get_url('list_competitions.php'); ?>">List</a></li>
             <li><a class="dropdown-item" href="<?php echo get_url('expired_competition.php'); ?>">Expired</a></li>
+            <li><a class="dropdown-item" href="<?php echo get_url('edit_comp.php'); ?>">Edit</a></li>
+
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
             <li><a href="<?php echo get_url('home.php'); ?>">Home</a></li>
@@ -45,6 +47,7 @@ session_start();
             <li><a href="<?php echo get_url('admin/create_role.php'); ?>">Create Role</a></li>
             <li><a href="<?php echo get_url('admin/list_roles.php'); ?>">List Roles</a></li>
             <li><a href="<?php echo get_url('admin/assign_roles.php'); ?>">Assign Roles</a></li>
+            <li><a href="<?php echo get_url('admin/edit_comp.php'); ?>">Edit Comp</a></li>
         <?php endif; ?>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('logout.php'); ?>">Logout</a></li>

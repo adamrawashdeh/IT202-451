@@ -66,22 +66,22 @@
   - [x] \(07/31/2022 of completion) Create function that calculates competition winners (clearly comment each step in the code)
         -  Link to related .md file: [Feat-UserCompetitions]https://github.com/adamrawashdeh/IT202-451/pull/74
 - Milestone 4
-    - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Anywhere a username is displayed should link to that user’s profile
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User will be able to see their competition history (active and expired)
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Add pagination to the Active Competitions view
-        -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) User’s score history will include pagination
-        -  Link to related .md file: [Link Name](link url)
+    - [x] \(08/04/2022 of completion) User can set their profile to be public or private
+        -  Link to related .md file: [Feat-UserProfileSettings]https://github.com/adamrawashdeh/IT202-451/pull/85
+    - [x] \(08/04/2022 of completion) Anywhere a username is displayed should link to that user’s profile
+        -  Link to related .md file: [Feat-UserProfileSettings](https://github.com/adamrawashdeh/IT202-451/pull/85
+    - [x] \(08/05/2022 of completion) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
+        -  Link to related .md file: [Feat-UserViewComp]https://github.com/adamrawashdeh/IT202-451/pull/86
+    - [x] \(08/06/2022 of completion) User will be able to see their competition history (active and expired)
+        -  Link to related .md file: [Feat-UserCompHistoryView]https://github.com/adamrawashdeh/IT202-451/pull/87)
+    - [x] \(08/07/2022 of completion) Add pagination to the Active Competitions view
+        -  Link to related .md file: [Feat-UserPagination]https://github.com/adamrawashdeh/IT202-451/pull/89
+    - [x] \(08/07/2022 of completion) User’s score history will include pagination
+        -  Link to related .md file: [Feat-UserPagination]https://github.com/adamrawashdeh/IT202-451/pull/89
     - [ ] \(mm/dd/yyyy of completion) User with the role of “admin” can edit a competition where paid_out = false
         -  Link to related .md file: [Link Name](link url)
-    - [ ] \(mm/dd/yyyy of completion) Game should be fully implemented/completed by this point
-        -  Link to related .md file: [Link Name](link url)
+    - [x] \(08/07/2022 of completion) Game should be fully implemented/completed by this point
+        -  Link to related .md file: [Feat-UserGameDeveloped]https://github.com/adamrawashdeh/IT202-451/pull/88
   
 ### Intructions
 #### Don't delete this

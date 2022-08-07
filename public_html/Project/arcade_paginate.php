@@ -81,13 +81,7 @@ try {
 }
 ?>
 <script>
-    function purchase(item) {
-        console.log("TODO purchase item", item);
-        //alert("It's almost like you purchased an item, but not really");
-        if (add_to_cart) {
-            add_to_cart(item);
-        }
-    }
+
 </script>
 
 <div class="container-fluid">

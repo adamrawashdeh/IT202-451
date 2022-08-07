@@ -241,7 +241,7 @@ require_once(__DIR__ . "/../../partials/nav.php"); //game finished
         }
 
         function newScore(){ //aor9 7/10/2022
-          if(rightScore == 3){
+          if(rightScore == 3) {
             save_score();
             leftScore = 0;
             rightScore = 0;

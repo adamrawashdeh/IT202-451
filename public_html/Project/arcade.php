@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../partials/nav.php");
+require_once(__DIR__ . "/../../partials/nav.php"); //game finished
 ?>
 <!DOCTYPE html>
 <html>
@@ -241,7 +241,7 @@ require_once(__DIR__ . "/../../partials/nav.php");
         }
 
         function newScore(){ //aor9 7/10/2022
-          if(rightScore == 3){
+          if(rightScore == 3) {
             save_score();
             leftScore = 0;
             rightScore = 0;
@@ -263,7 +263,6 @@ require_once(__DIR__ . "/../../partials/nav.php");
                         }
                     })
         }
-
 
 // Event listeners for reload
         function drawScores() {
@@ -322,4 +321,4 @@ require_once(__DIR__ . "/../../partials/nav.php");
     </main>
 </body>
 </html>
-<?php require_once(__DIR__."/../../partials/flash.php");
+<?php require(__DIR__."/../../partials/flash.php");

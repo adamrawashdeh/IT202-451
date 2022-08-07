@@ -104,7 +104,7 @@ function calc_winners() //aor9 07/31/2022
     error_log("Starting winner calc");
     $calced_comps = [];
     $stmt = $db->prepare("select c.id,c.name, first_place_per, second_place_per, third_place_per, current_reward 
-    from Competitions where expires <= CURRENT_TIMESTAMP() AND did_calc = 0 AND current_participants >= min_participants LIMIT 10");
+    from Competitions c where expires <= CURRENT_TIMESTAMP() AND did_calc = 0 AND current_participants >= min_participants LIMIT 10");
     try {
         $stmt->execute();
         $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -120,28 +120,27 @@ function calc_winners() //aor9 07/31/2022
                 $fpr = ceil($reward * $fp);
                 $spr = ceil($reward * $sp);
                 $tpr = ceil($reward * $tp);
-                $comp_id = se($row, "id", -1, false);
+                $comp_id = se($row, "id", false);
 
                 try {
                     $r = get_top_scores_for_comp($comp_id, 3);
                     if ($r) {
                         $atleastOne = false;
                         foreach ($r as $index => $row) {
-                            $aid = se($row, "account_id", -1, false);
                             $score = se($row, "score", 0, false);
-                            $user_id = se($row, "user_id", -1, false);
+                            $user_id = se($row, "user_id", false);
                             if ($index == 0) {
-                                if (give_credits($fpr, "won-comp", -1, $aid, "First place in $title with score of $score")) {
+                                if (give_credits($fpr, "won-comp", "First place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id First place in $title with score of $score");
                             } else if ($index == 1) {
-                                if (give_credits($spr, "won-comp", -1, $aid, "Second place in $title with score of $score")) {
+                                if (give_credits($spr, "won-comp", "Second place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id Second place in $title with score of $score");
                             } else if ($index == 2) {
-                                if (give_credits($tpr, "won-comp", -1, $aid, "Third place in $title with score of $score")) {
+                                if (give_credits($tpr, "won-comp", "Third place in $title with score of $score")) {
                                     $atleastOne = true;
                                 }
                                 error_log("User $user_id Third place in $title with score of $score");
@@ -151,6 +150,9 @@ function calc_winners() //aor9 07/31/2022
                             array_push($calced_comps, $comp_id);
                         }
                     } else {
+                        $query = "UPDATE Competitions set did_calc = 1 WHERE id = :id";  
+                        $stmt = $db->prepare($query);
+                        $stmt->execute([":id" => $comp_id]);
                         error_log("No eligible scores");
                     }
                 } catch (PDOException $e) {

@@ -1,10 +1,14 @@
-# Project Name: (Which Project)
-## Project Summary: (Copy from proposal)
+# Project Name: Arcade Game
+## Project Summary: For my Arcade game I decided to create a Pong Game. The player versus an AI and when the AI reaches a score of 3 the game ends. The players score is saved (assuming they got higher than 0) and put in the db.
 ## Github Link: [https://github.com/adamrawashdeh/IT202-451/tree/prod/public_html/Project/sql]
-## Project Board Link: 
+## Project Board Link: https://github.com/adamrawashdeh/IT202-451/projects/1
 ## Website Link: https://aor9-prod.herokuapp.com/Project
 ## Your Name: Adam Rawashdeh
 
+## Milestone 1 Sumbission: https://github.com/adamrawashdeh/IT202-451/blob/dev/public_html/Project/Milestone1submission.md
+## Milestone 2 Sumbission: https://github.com/adamrawashdeh/IT202-451/blob/dev/public_html/Project/Milestone2submission.md
+## Milestone 3 Sumbission: https://github.com/adamrawashdeh/IT202-451/blob/dev/public_html/Project/Milestone3submission.md
+## Milestone 4 Sumbission: https://github.com/adamrawashdeh/IT202-451/blob/dev/public_html/Project/Milestone4submssion.md
 <!-- Line item / Feature template (use this for each bullet point) -- DO NOT DELETE THIS SECTION
 
 

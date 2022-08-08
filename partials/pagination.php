@@ -1,11 +1,11 @@
 <!-- this will be moved into a partial file for reusability-->
 <?php
 if (!isset($total_pages)) {
-    flash("Note to Dev: The total_pages variable is undefined", "danger");
+    //flash("Note to Dev: The total_pages variable is undefined", "danger");
     $total_pages = 0;
 }
 if (!isset($page)) {
-    flash("Note to Dev: The page variable is undefined", "danger");
+    //flash("Note to Dev: The page variable is undefined", "danger");
     $page = 1;
 }
 //$total_pages = ceil($total / $per_page);
